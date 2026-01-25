@@ -10,6 +10,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
+      min-height: 100vh; /* KLJUČNO za mobilni */
 
       background-image: url("slike/pozadina.jpg");
       background-size: cover;
@@ -22,24 +23,24 @@
       text-align: center;
       margin-bottom: 30px;
       color: #fff;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
     }
 
-    /* KARTICE */
+    /* KARTICE – JAKO TRANSPARENTNE */
     .category {
-      background: rgba(255, 255, 255, 0.75); /* transparentno ali citljivo */
+      background: rgba(255, 255, 255, 0.55); /* jedva vidljiva kartica */
       border-radius: 14px;
       padding: 18px;
       margin-bottom: 20px;
       max-width: 500px;
     }
 
-    /* NASLOVI KATEGORIJA */
     .category h2 {
       margin: 0 0 10px 0;
       font-size: 22px;
-      font-weight: 800; /* pojacan font */
-      color: #111;
+      font-weight: 800;
+      color: #000;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.6);
     }
 
     .subcategory {
@@ -58,11 +59,12 @@
       text-decoration: underline;
     }
 
-    /* MOBILNI PRIKAZ */
+    /* MOBILNI PRIKAZ – POPRAVKA POZADINE */
     @media (max-width: 600px) {
       body {
         padding: 15px;
-        background-attachment: scroll;
+        min-height: 100vh;
+        background-attachment: scroll; /* mobile fix */
       }
 
       .category {
