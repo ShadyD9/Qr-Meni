@@ -2,32 +2,47 @@
 <html lang="sr">
 <head>
   <meta charset="UTF-8">
-  <title>Sokovi</title>
+  <title>Kafe i Čajevi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
-     font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
 
-  background-image: url("slike/pozadinakafa.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+      background-image: url("slike/pozadinakafa.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    a {
+      display: inline-block;
+      margin-bottom: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.7);
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      color: #fff;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
     }
 
+    /* STAVKE */
     .item {
-      background: white;
-      padding: 10px;
-      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.55); /* polu-transparentno */
+      border-radius: 14px;
+      padding: 12px;
       margin-bottom: 15px;
+      max-width: 500px;
+
       display: flex;
       align-items: center;
       gap: 15px;
@@ -37,12 +52,35 @@
       width: 80px;
       height: 80px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 10px;
     }
 
-    a {
-      display: inline-block;
-      margin-bottom: 20px;
+    .item div {
+      font-size: 17px;
+      font-weight: 700;
+      color: #000;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.6);
+    }
+
+    /* MOBILNI PRIKAZ */
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+        background-attachment: scroll;
+      }
+
+      .item {
+        max-width: 95%;
+      }
+
+      .item img {
+        width: 70px;
+        height: 70px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
@@ -51,11 +89,11 @@
 
 <a href="index.html">← Nazad</a>
 
-<h1>🥤 Kafe-Cajevi</h1>
+<h1>☕ Kafe i Čajevi</h1>
 
 <div class="item">
   <img src="slike/domaca.jpg">
-  <div>Domaca Kafa</div>
+  <div>Domaća Kafa</div>
 </div>
 
 <div class="item">
@@ -63,50 +101,50 @@
   <div>Grand Freeze</div>
 </div>
 
-  <div class="item">
+<div class="item">
   <img src="slike/freezekokos.jpg">
-  <div>Grand Freeze kokos</div>    
+  <div>Grand Freeze Kokos</div>
 </div>
 
-  <div class="item">
+<div class="item">
   <img src="slike/3u1.jpg">
-  <div>Grand 3u1 classic</div>
+  <div>Grand 3u1 Classic</div>
 </div>
 
-  <div class="item">
+<div class="item">
   <img src="slike/3u1capucinovanila.jpg">
-  <div>Grand 3u1 capucino vanila</div>
+  <div>Grand 3u1 Capucino Vanila</div>
 </div>
 
-  <div class="item">
+<div class="item">
   <img src="slike/3u1najlepse.jpg">
-  <div>Grand 3u1 Najlepse Zelje</div>
+  <div>Grand 3u1 Najlepše Želje</div>
 </div>
 
-  <div class="item">
+<div class="item">
   <img src="slike/3u1strong.jpg">
   <div>Grand 3u1 Strong</div>
 </div>
 
-  <div class="item">
+<div class="item">
   <img src="slike/caj9biljaka.jpg">
-  <div>Yumis caj 9 biljaka</div>
+  <div>Yumis Čaj 9 Biljaka</div>
 </div>
 
 <div class="item">
   <img src="slike/cajbrusnica.jpg">
-  <div>Fructis caj Brusnica</div>
+  <div>Fructis Čaj Brusnica</div>
 </div>
 
 <div class="item">
   <img src="slike/cajkamilica.jpg">
-  <div>Fructis caj Kamilica</div>
+  <div>Fructis Čaj Kamilica</div>
 </div>
 
 <div class="item">
   <img src="slike/cajuva.jpg">
-  <div>Welton caj Uva</div>
+  <div>Welton Čaj Uva</div>
 </div>
-  
+
 </body>
 </html>
