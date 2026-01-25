@@ -4,35 +4,19 @@
 <meta charset="UTF-8">
 <title>Sokovi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#000000">
-  
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Kućni Meni">
+
 <style>
-body{
-  font-family: Arial, sans-serif;
-  margin:0;
-  padding:20px;
-  min-height:100vh;
-  background:url("slike/pozadinasok.jpg") center/cover no-repeat fixed;
-}
+body{font-family:Arial,sans-serif;margin:0;padding:20px;min-height:100vh;background:url("slike/pozadinasok.jpg") center/cover no-repeat fixed;}
+a{color:#fff;font-weight:bold;text-decoration:none;text-shadow:0 1px 4px rgba(0,0,0,.7)}
+h1{text-align:center;color:#fff;margin:25px 0;text-shadow:0 2px 6px rgba(0,0,0,.7)}
 
-a{
-  color:#fff;
-  font-weight:bold;
-  text-decoration:none;
-  text-shadow:0 1px 4px rgba(0,0,0,.7);
-}
-
-h1{
-  text-align:center;
-  color:#fff;
-  margin:20px 0;
-  text-shadow:0 2px 6px rgba(0,0,0,.7);
-}
-
-/* KARTICE */
 .item{
-  background:rgba(255,255,255,.55);
+  background: rgba(255,255,255,.4);
   border-radius:14px;
   padding:12px;
   margin-bottom:15px;
@@ -42,121 +26,51 @@ h1{
   align-items:center;
   cursor:pointer;
 }
+.item img{width:80px;height:80px;object-fit:cover;border-radius:10px}
+.item div{font-size:17px;font-weight:700;color:#000;text-shadow:0 1px 2px rgba(255,255,255,.6)}
 
-.item img{
-  width:80px;
-  height:80px;
-  object-fit:cover;
-  border-radius:10px;
-}
-
-.item div{
-  font-size:17px;
-  font-weight:700;
-}
-
-/* LIGHTBOX */
-#lightbox{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.9);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:999;
-}
-
-#lightbox img{
-  max-width:90%;
-  max-height:90%;
-  border-radius:14px;
-  animation:zoom .25s ease;
-}
-
-@keyframes zoom{
-  from{transform:scale(.7);opacity:0}
-  to{transform:scale(1);opacity:1}
-}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:999;}
+#lightbox img{max-width:90%;max-height:90%;border-radius:14px;animation:zoom .25s ease;}
+@keyframes zoom{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1)}
 
 @media(max-width:600px){
   body{padding:15px;background-attachment:scroll}
   .item{max-width:95%}
   .item img{width:70px;height:70px}
+  h1{font-size:24px}
 }
 </style>
 </head>
-
 <body>
 
 <a href="index.html">← Nazad</a>
 <h1>🥤 Sokovi</h1>
 
-<div class="item" onclick="openImg(this)">
-  <img src="slike/heba.jpg">
-  <div>Kisela voda Heba</div>
-</div>
+<div class="item" onclick="openImg(this)"><img src="slike/heba.jpg"><div>Kisela voda Heba</div></div>
+<div class="item" onclick="openImg(this)"><img src="slike/knjazlimun.jpg"><div>Kisela voda Knjaz-Limun</div></div>
+<div class="item" onclick="openImg(this)"><img src="slike/cocacola.jpg"><div>Coca-Cola</div></div>
+<div class="item" onclick="openImg(this)"><img src="slike/dunja.jpg"><div>Voćna dolina – Dunja & Jabuka</div></div>
+<div class="item" onclick="openImg(this)"><img src="slike/tubemultivitamin.jpg"><div>Multivitamin – Tube</div></div>
+<div class="item" onclick="openImg(this)"><img src="slike/vocnekapinarandza.jpg"><div>Voćne kapi – Narandža</div></div>
+<div class="item" onclick="openImg(this)"><img src="slike/happydaymyltivitamin.jpg"><div>Happy Day – Multivitamin</div></div>
+<div class="item" onclick="openImg(this)"><img src="slike/takovovisnja.jpg"><div>Takovo – Višnja</div></div>
+<div class="item" onclick="openImg(this)"><img src="slike/fanta.jpg"><div>Fanta Narandža</div></div>
+<div class="item" onclick="openImg(this)"><img src="slike/shokata.jpg"><div>Fanta Shokata</div></div>
 
-<div class="item" onclick="openImg(this)">
-  <img src="slike/knjazlimun.jpg">
-  <div>Knjaz – Limun</div>
-</div>
-
-<div class="item" onclick="openImg(this)">
-  <img src="slike/cocacola.jpg">
-  <div>Coca-Cola</div>
-</div>
-
-<div class="item" onclick="openImg(this)">
-  <img src="slike/dunja.jpg">
-  <div>Dunja & Jabuka</div>
-</div>
-
-<div class="item" onclick="openImg(this)">
-  <img src="slike/fanta.jpg">
-  <div>Fanta Narandža</div>
-</div>
-
-<div id="lightbox" onclick="closeImg()">
-  <img id="lb-img">
-</div>
+<div id="lightbox" onclick="closeImg()"><img id="lb-img"></div>
 
 <script>
-let images=[], index=0, startX=0;
-
-document.querySelectorAll(".item img").forEach((img,i)=>{
-  images.push(img.src);
-  img.dataset.i=i;
-});
-
-function openImg(el){
-  const img=el.querySelector("img");
-  index=+img.dataset.i;
-  show();
-}
-
-function show(){
-  const lb=document.getElementById("lightbox");
-  const im=document.getElementById("lb-img");
-  im.src=images[index];
-  lb.style.display="flex";
-}
-
-function closeImg(){
-  document.getElementById("lightbox").style.display="none";
-}
-
-document.getElementById("lightbox").addEventListener("touchstart",e=>{
-  startX=e.touches[0].clientX;
-});
-
-document.getElementById("lightbox").addEventListener("touchend",e=>{
-  let dx=e.changedTouches[0].clientX-startX;
-  if(Math.abs(dx)>50){
-    index = dx<0 ? (index+1)%images.length : (index-1+images.length)%images.length;
-    show();
-  }
+let imgs=[],i=0,x0=0;
+document.querySelectorAll(".item img").forEach((img,n)=>{imgs.push(img.src);img.dataset.i=n});
+function openImg(el){i=+el.querySelector("img").dataset.i;show()}
+function show(){lb.style.display="flex";lbImg.src=imgs[i]}
+function closeImg(){lb.style.display="none"}
+const lb=document.getElementById("lightbox"),lbImg=document.getElementById("lb-img");
+lb.addEventListener("touchstart",e=>x0=e.touches[0].clientX);
+lb.addEventListener("touchend",e=>{
+  let d=e.changedTouches[0].clientX-x0;
+  if(Math.abs(d)>50){i=d<0?(i+1)%imgs.length:(i-1+imgs.length)%imgs.length;show()}
 });
 </script>
-
 </body>
 </html>
