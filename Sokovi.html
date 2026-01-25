@@ -112,53 +112,78 @@
 
 <div class="item">
   <img src="slike/heba.jpg">
+ onclick="uvecaj(this)">
   <div>Kisela voda Heba</div>
 </div>
 
 <div class="item">
   <img src="slike/knjazlimun.jpg">
+  onclick="uvecaj(this)">
   <div>Kisela voda Knjaz – Limun</div>
 </div>
 
 <div class="item">
   <img src="slike/cocacola.jpg">
+  onclick="uvecaj(this)">
   <div>Coca-Cola</div>
 </div>
 
 <div class="item">
   <img src="slike/dunja.jpg">
+  onclick="uvecaj(this)">
   <div>Voćna dolina – Dunja & Jabuka</div>
 </div>
 
 <div class="item">
   <img src="slike/tubemultivitamin.jpg">
+  onclick="uvecaj(this)">
   <div>Multivitamin – Tube</div>
 </div>
 
 <div class="item">
   <img src="slike/vocnekapinarandza.jpg">
+  onclick="uvecaj(this)">
   <div>Voćne kapi – Narandža</div>
 </div>
 
 <div class="item">
   <img src="slike/happydaymyltivitamin.jpg">
+ onclick="uvecaj(this)">
   <div>Happy Day – Multivitamin</div>
 </div>
 
 <div class="item">
   <img src="slike/takovovisnja.jpg">
+  onclick="uvecaj(this)">
   <div>Takovo – Višnja</div>
 </div>
 
 <div class="item">
   <img src="slike/fanta.jpg">
+  onclick="uvecaj(this)">
   <div>Fanta – Narandža</div>
 </div>
 
 <div class="item">
   <img src="slike/shokata.jpg">
+  onclick="uvecaj(this)">
   <div>Fanta – Shokata</div>
 </div>
 
+  <div id="lightbox" onclick="zatvori()">
+  <img id="lightbox-img">
+</div>
+
+<script>
+  function uvecaj(img) {
+    document.getElementById("lightbox-img").src = img.src;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function zatvori() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+  
 </body>
 </html>
