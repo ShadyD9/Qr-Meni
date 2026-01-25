@@ -2,32 +2,47 @@
 <html lang="sr">
 <head>
   <meta charset="UTF-8">
-  <title>Sokovi</title>
+  <title>Alkoholna pića</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
-   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
 
-  background-image: url("slike/pozadinaalkohol.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+      background-image: url("slike/pozadinaalkohol.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    a {
+      display: inline-block;
+      margin-bottom: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.7);
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      color: #fff;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
     }
 
+    /* STAVKE */
     .item {
-      background: white;
-      padding: 10px;
-      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.55);
+      border-radius: 14px;
+      padding: 12px;
       margin-bottom: 15px;
+      max-width: 500px;
+
       display: flex;
       align-items: center;
       gap: 15px;
@@ -37,12 +52,35 @@
       width: 80px;
       height: 80px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 10px;
     }
 
-    a {
-      display: inline-block;
-      margin-bottom: 20px;
+    .item div {
+      font-size: 17px;
+      font-weight: 700;
+      color: #000;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.6);
+    }
+
+    /* MOBILNI PRIKAZ */
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+        background-attachment: scroll;
+      }
+
+      .item {
+        max-width: 95%;
+      }
+
+      .item img {
+        width: 70px;
+        height: 70px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
@@ -51,36 +89,36 @@
 
 <a href="index.html">← Nazad</a>
 
-<h1>🥤 Alkoholna Pica</h1>
+<h1>🥃 Alkoholna pića</h1>
 
 <div class="item">
   <img src="slike/rakija.jpg">
-  <div>Domaca Rakija</div>
+  <div>Domaća rakija</div>
 </div>
 
-  <div class="item">
+<div class="item">
   <img src="slike/vucija.jpg">
-  <div>Vucija rakija Viljamovka</div>
+  <div>Vučija rakija – Viljamovka</div>
 </div>
 
 <div class="item">
   <img src="slike/ballentines.jpg">
-  <div>Viski Ballentines</div>
+  <div>Viski Ballantine’s</div>
 </div>
 
 <div class="item">
   <img src="slike/grants.jpg">
-  <div>Viski Grants</div>
+  <div>Viski Grant’s</div>
 </div>
-  
+
 <div class="item">
   <img src="slike/gorki.jpg">
-  <div>Gorki List</div>
+  <div>Gorki list</div>
 </div>
 
 <div class="item">
   <img src="slike/grapino.jpg">
-  <div>Grapino Miele-Menta</div>
+  <div>Grapino – Miele & Menta</div>
 </div>
 
 <div class="item">
@@ -90,23 +128,23 @@
 
 <div class="item">
   <img src="slike/somersbykruska.jpg">
-  <div>Somersby Kruska</div>
+  <div>Somersby – Kruška</div>
 </div>
 
 <div class="item">
   <img src="slike/somersbymangolime.jpg">
-  <div>Somersby Mango-Limeta</div>
+  <div>Somersby – Mango & Limeta</div>
 </div>
 
 <div class="item">
   <img src="slike/rose.jpg">
-  <div>Rose vino</div>
+  <div>Roze vino</div>
 </div>
 
 <div class="item">
   <img src="slike/sangria.jpg">
   <div>Sangria Di Luna</div>
 </div>
-  
+
 </body>
 </html>
