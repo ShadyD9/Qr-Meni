@@ -1,59 +1,130 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Kućni Meni</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#000000">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="application-name" content="Kućni Meni">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
 
-<title>Kućni Meni</title>
+      background-image: url("slike/pozadina.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
 
-<style>
-body{
-  font-family: Arial,sans-serif;
-  margin:0;
-  padding:20px;
-  min-height:100vh;
-  background:url("slike/pozadina.jpg") center/cover no-repeat fixed;
-}
+    h1 {
+      text-align: center;
+      margin-bottom: 5px;
+      color: #fff;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.9);
+      font-size: 36px;
+    }
 
-h1{text-align:center;color:#fff;margin:0;text-shadow:0 2px 6px rgba(0,0,0,.7);}
-h2{text-align:center;color:#fff;margin:0;text-shadow:0 2px 6px rgba(0,0,0,.7);font-size:20px;margin-bottom:30px;}
+    h2.subtitle {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 25px;
+      color: #fff;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+      font-size: 20px;
+      padding-left: 15px; /* pomak udesno */
+    }
 
-.category{
-  background: rgba(255,255,255,.25);
-  border-radius:12px;
-  padding:15px;
-  margin:20px auto;
-  max-width:500px;
-}
+    .category {
+      background: rgba(0,0,0,0.55); /* tamnije za bolji kontrast */
+      border-radius: 14px;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 500px;
+    }
 
-.subcategory{
-  margin-left:20px;
-  margin-top:10px;
-}
+    .subcategory {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
 
-a{text-decoration:none;color:#333;font-weight:bold;}
-a:hover{text-decoration:underline;}
-</style>
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      font-size: 18px;
+      text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px #0ff, 0 0 12px #0ff, 0 0 15px #0ff;
+      transition: text-shadow 1s ease-in-out;
+    }
+
+    a:hover {
+      text-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #0ff, 0 0 25px #0ff;
+    }
+
+    /* Animacija sjaja */
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px #0ff, 0 0 12px #0ff, 0 0 15px #0ff;
+      }
+      50% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #0ff, 0 0 25px #0ff;
+      }
+    }
+
+    a {
+      animation: glow 2s infinite;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      h2.subtitle {
+        font-size: 18px;
+        padding-left: 10px;
+      }
+
+      a {
+        font-size: 16px;
+      }
+
+      .category {
+        max-width: 95%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
 <h1>🍹 Kućni Meni</h1>
-<h2>Porodica Urzikic 😀</h2>
+<h2 class="subtitle">Porodica Urzikic 😀</h2>
 
 <div class="category">
   <h2>Pića</h2>
-  <div class="subcategory">➜ <a href="sokovi.html">Sokovi-Kisela Voda</a></div>
-  <div class="subcategory">➜ <a href="alkohol.html">Alkoholna pića</a></div>
+
+  <div class="subcategory">
+    ➜ <a href="Sokovi.html">Sokovi-Kisela Voda</a>
+  </div>
+
+  <div class="subcategory">
+    ➜ <a href="alkohol.html">Alkoholna pića</a>
+  </div>
 </div>
 
 <div class="category">
   <h2>Kafe i čajevi</h2>
-  <div class="subcategory">➜ <a href="kafa-caj.html">Pogledaj ponudu</a></div>
+
+  <div class="subcategory">
+    ➜ <a href="kafa-caj.html">Pogledaj ponudu</a>
+  </div>
 </div>
 
 </body>
