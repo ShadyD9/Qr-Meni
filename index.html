@@ -23,7 +23,7 @@
       text-align: center;
       margin-bottom: 5px;
       color: #fff;
-      text-shadow: 0 3px 8px rgba(0,0,0,0.9);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.8);
       font-size: 36px;
     }
 
@@ -32,13 +32,13 @@
       margin-top: 0;
       margin-bottom: 25px;
       color: #fff;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.8);
       font-size: 20px;
       padding-left: 15px; /* pomak udesno */
     }
 
     .category {
-      background: rgba(0,0,0,0.55); /* tamnije za bolji kontrast */
+      background: rgba(0,0,0,0.35); /* svetlije od prethodno, manje tamno */
       border-radius: 14px;
       padding: 15px;
       margin: 20px auto;
@@ -50,31 +50,28 @@
       margin-top: 10px;
     }
 
-    a {
+    a, .category h2 {
       text-decoration: none;
       color: #fff;
       font-weight: bold;
       font-size: 18px;
-      text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px #0ff, 0 0 12px #0ff, 0 0 15px #0ff;
+      text-shadow: 0 0 2px #fff, 0 0 4px #0ff, 0 0 6px #0ff;
       transition: text-shadow 1s ease-in-out;
+      animation: glow 2s infinite;
     }
 
-    a:hover {
-      text-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #0ff, 0 0 25px #0ff;
+    a:hover, .category h2:hover {
+      text-shadow: 0 0 3px #fff, 0 0 6px #0ff, 0 0 9px #0ff;
     }
 
     /* Animacija sjaja */
     @keyframes glow {
       0%, 100% {
-        text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px #0ff, 0 0 12px #0ff, 0 0 15px #0ff;
+        text-shadow: 0 0 2px #fff, 0 0 4px #0ff, 0 0 6px #0ff;
       }
       50% {
-        text-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #0ff, 0 0 25px #0ff;
+        text-shadow: 0 0 3px #fff, 0 0 5px #0ff, 0 0 8px #0ff;
       }
-    }
-
-    a {
-      animation: glow 2s infinite;
     }
 
     @media (max-width: 600px) {
@@ -91,7 +88,7 @@
         padding-left: 10px;
       }
 
-      a {
+      a, .category h2 {
         font-size: 16px;
       }
 
