@@ -1,113 +1,59 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-  <meta charset="UTF-8">
-  <title>Kućni QR Meni
-        PORODICA URZIKIC 😀
- </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#000000">
-  
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      min-height: 100vh; /* KLJUČNO za mobilni */
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Kućni Meni">
 
-      background-image: url("slike/pozadina.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
+<title>Kućni Meni</title>
 
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #fff;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
-    }
+<style>
+body{
+  font-family: Arial,sans-serif;
+  margin:0;
+  padding:20px;
+  min-height:100vh;
+  background:url("slike/pozadina.jpg") center/cover no-repeat fixed;
+}
 
-    /* KARTICE – JAKO TRANSPARENTNE */
-    .category {
-      background: rgba(255, 255, 255, 0.55); /* jedva vidljiva kartica */
-      border-radius: 14px;
-      padding: 18px;
-      margin-bottom: 20px;
-      max-width: 500px;
-    }
+h1{text-align:center;color:#fff;margin:0;text-shadow:0 2px 6px rgba(0,0,0,.7);}
+h2{text-align:center;color:#fff;margin:0;text-shadow:0 2px 6px rgba(0,0,0,.7);font-size:20px;margin-bottom:30px;}
 
-    .category h2 {
-      margin: 0 0 10px 0;
-      font-size: 22px;
-      font-weight: 800;
-      color: #000;
-      text-shadow: 0 1px 2px rgba(255,255,255,0.6);
-    }
+.category{
+  background: rgba(255,255,255,.25);
+  border-radius:12px;
+  padding:15px;
+  margin:20px auto;
+  max-width:500px;
+}
 
-    .subcategory {
-      margin-left: 15px;
-      margin-top: 10px;
-      font-size: 17px;
-    }
+.subcategory{
+  margin-left:20px;
+  margin-top:10px;
+}
 
-    a {
-      text-decoration: none;
-      color: #000;
-      font-weight: 600;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* MOBILNI PRIKAZ – POPRAVKA POZADINE */
-    @media (max-width: 600px) {
-      body {
-        padding: 15px;
-        min-height: 100vh;
-        background-attachment: scroll; /* mobile fix */
-      }
-
-      .category {
-        max-width: 95%;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-
-      .category h2 {
-        font-size: 20px;
-      }
-    }
-  </style>
+a{text-decoration:none;color:#333;font-weight:bold;}
+a:hover{text-decoration:underline;}
+</style>
 </head>
-
 <body>
 
 <h1>🍹 Kućni Meni</h1>
+<h2>Porodica Urzikic 😀</h2>
 
 <div class="category">
   <h2>Pića</h2>
-
-  <div class="subcategory">
-    ➜ <a href="Sokovi.html">Sokovi & Kisela voda</a>
-  </div>
-
-  <div class="subcategory">
-    ➜ <a href="alkohol.html">Alkoholna pića</a>
-  </div>
+  <div class="subcategory">➜ <a href="sokovi.html">Sokovi-Kisela Voda</a></div>
+  <div class="subcategory">➜ <a href="alkohol.html">Alkoholna pića</a></div>
 </div>
 
 <div class="category">
   <h2>Kafe i čajevi</h2>
-
-  <div class="subcategory">
-    ➜ <a href="kafa-caj.html">Pogledaj ponudu</a>
-  </div>
+  <div class="subcategory">➜ <a href="kafa-caj.html">Pogledaj ponudu</a></div>
 </div>
 
 </body>
