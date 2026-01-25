@@ -1,150 +1,85 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-  <meta charset="UTF-8">
-  <title>Kafe i Čajevi</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Kafe i čajevi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      min-height: 100vh;
+<style>
+body{
+  font-family:Arial,sans-serif;
+  margin:0;
+  padding:20px;
+  min-height:100vh;
+  background:url("slike/pozadinakafa.png") center/cover no-repeat fixed;
+}
+a{color:#fff;font-weight:bold;text-decoration:none;text-shadow:0 1px 4px rgba(0,0,0,.7)}
+h1{text-align:center;color:#fff;margin:20px 0;text-shadow:0 2px 6px rgba(0,0,0,.7)}
 
-      background-image: url("slike/pozadinakafa.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
+.item{
+  background:rgba(255,255,255,.55);
+  border-radius:14px;
+  padding:12px;
+  margin-bottom:15px;
+  max-width:500px;
+  display:flex;
+  gap:15px;
+  align-items:center;
+  cursor:pointer;
+}
+.item img{width:80px;height:80px;object-fit:cover;border-radius:10px}
+.item div{font-size:17px;font-weight:700}
 
-    a {
-      display: inline-block;
-      margin-bottom: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #fff;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.7);
-    }
+#lightbox{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.9);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+#lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:14px;
+  animation:zoom .25s ease;
+}
+@keyframes zoom{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
 
-    h1 {
-      text-align: center;
-      margin-bottom: 25px;
-      color: #fff;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
-    }
-
-    /* STAVKE */
-    .item {
-      background: rgba(255, 255, 255, 0.55); /* polu-transparentno */
-      border-radius: 14px;
-      padding: 12px;
-      margin-bottom: 15px;
-      max-width: 500px;
-
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .item img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .item div {
-      font-size: 17px;
-      font-weight: 700;
-      color: #000;
-      text-shadow: 0 1px 2px rgba(255,255,255,0.6);
-    }
-
-    /* MOBILNI PRIKAZ */
-    @media (max-width: 600px) {
-      body {
-        padding: 15px;
-        background-attachment: scroll;
-      }
-
-      .item {
-        max-width: 95%;
-      }
-
-      .item img {
-        width: 70px;
-        height: 70px;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-    }
-  </style>
+@media(max-width:600px){
+  body{padding:15px;background-attachment:scroll}
+  .item{max-width:95%}
+  .item img{width:70px;height:70px}
+}
+</style>
 </head>
 
 <body>
 
 <a href="index.html">← Nazad</a>
+<h1>☕ Kafe i čajevi</h1>
 
-<h1>☕ Kafe i Čajevi</h1>
+<div class="item" onclick="openImg(this)"><img src="slike/domaca.jpg"><div>Domaća kafa</div></div>
+<div class="item" onclick="openImg(this)"><img src="slike/freeze.jpg"><div>Grand Freeze</div></div>
+<div class="item" onclick="openImg(this)"><img src="slike/3u1.jpg"><div>Grand 3u1</div></div>
+<div class="item" onclick="openImg(this)"><img src="slike/cajkamilica.jpg"><div>Čaj kamilica</div></div>
+<div class="item" onclick="openImg(this)"><img src="slike/cajbrusnica.jpg"><div>Čaj brusnica</div></div>
 
-<div class="item">
-  <img src="slike/domaca.jpg">
-  <div>Domaća Kafa</div>
-</div>
+<div id="lightbox" onclick="closeImg()"><img id="lb-img"></div>
 
-<div class="item">
-  <img src="slike/freeze.jpg">
-  <div>Grand Freeze</div>
-</div>
-
-<div class="item">
-  <img src="slike/freezekokos.jpg">
-  <div>Grand Freeze Kokos</div>
-</div>
-
-<div class="item">
-  <img src="slike/3u1.jpg">
-  <div>Grand 3u1 Classic</div>
-</div>
-
-<div class="item">
-  <img src="slike/3u1capucinovanila.jpg">
-  <div>Grand 3u1 Capucino Vanila</div>
-</div>
-
-<div class="item">
-  <img src="slike/3u1najlepse.jpg">
-  <div>Grand 3u1 Najlepše Želje</div>
-</div>
-
-<div class="item">
-  <img src="slike/3u1strong.jpg">
-  <div>Grand 3u1 Strong</div>
-</div>
-
-<div class="item">
-  <img src="slike/caj9biljaka.jpg">
-  <div>Yumis Čaj 9 Biljaka</div>
-</div>
-
-<div class="item">
-  <img src="slike/cajbrusnica.jpg">
-  <div>Fructis Čaj Brusnica</div>
-</div>
-
-<div class="item">
-  <img src="slike/cajkamilica.jpg">
-  <div>Fructis Čaj Kamilica</div>
-</div>
-
-<div class="item">
-  <img src="slike/cajuva.jpg">
-  <div>Welton Čaj Uva</div>
-</div>
+<script>
+let imgs=[],i=0,x0=0;
+document.querySelectorAll(".item img").forEach((img,n)=>{imgs.push(img.src);img.dataset.i=n});
+function openImg(el){i=+el.querySelector("img").dataset.i;show()}
+function show(){lb.style.display="flex";lbImg.src=imgs[i]}
+function closeImg(){lb.style.display="none"}
+const lb=document.getElementById("lightbox"),lbImg=document.getElementById("lb-img");
+lb.addEventListener("touchstart",e=>x0=e.touches[0].clientX);
+lb.addEventListener("touchend",e=>{
+  let d=e.changedTouches[0].clientX-x0;
+  if(Math.abs(d)>50){i=d<0?(i+1)%imgs.length:(i-1+imgs.length)%imgs.length;show()}
+});
+</script>
 
 </body>
 </html>
