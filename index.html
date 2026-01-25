@@ -8,49 +8,74 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
+      margin: 0;
+      padding: 20px;
 
-  background-image: url("slike/pozadina.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-      .category, .item {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
-  padding: 15px;
-  margin-bottom: 20px;
-        
+      background-image: url("slike/pozadina.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
     h1 {
       text-align: center;
       margin-bottom: 30px;
+      color: #fff;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.6);
     }
 
-  .category, .item {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
-  padding: 15px;
-  margin: 20px auto;
+    /* KARTICE */
+    .category {
+      background: rgba(255, 255, 255, 0.75); /* transparentno ali citljivo */
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 20px;
+      max-width: 500px;
+    }
 
-  max-width: 500px;
-}
+    /* NASLOVI KATEGORIJA */
+    .category h2 {
+      margin: 0 0 10px 0;
+      font-size: 22px;
+      font-weight: 800; /* pojacan font */
+      color: #111;
+    }
 
     .subcategory {
-      margin-left: 20px;
+      margin-left: 15px;
       margin-top: 10px;
+      font-size: 17px;
     }
 
     a {
       text-decoration: none;
-      color: #333;
-      font-weight: bold;
+      color: #000;
+      font-weight: 600;
     }
 
     a:hover {
       text-decoration: underline;
+    }
+
+    /* MOBILNI PRIKAZ */
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+        background-attachment: scroll;
+      }
+
+      .category {
+        max-width: 95%;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .category h2 {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
@@ -63,7 +88,7 @@
   <h2>Pića</h2>
 
   <div class="subcategory">
-    ➜ <a href="Sokovi.html">Sokovi-Kisela Voda</a>
+    ➜ <a href="Sokovi.html">Sokovi & Kisela voda</a>
   </div>
 
   <div class="subcategory">
